@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "google-payment-token-decipher"
+description = "A python google payment token decipher library"
+long_description="A simple python implementation of the decipher process for google payment token"
+requires-python = ">=3.8"
+keywords = ["google", "google_pay", "gpay", "g-pay", "google pay", "googlepay"]
+license = {text = "BSD 3-Clause License"}
+author="Bastien BO"
+author_email="bastien.bo@free.fr"
+url="https://github.com/Bastien-BO/google-payment-token-decipher"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: Unix",
+    "Operating System :: POSIX :: Linux",
+    "Environment :: Console",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet",
+]
+dependencies = [
+    "requests >= 2.25.0",
+    "cryptography >= 37.0.0",
+    "pycryptodome >= 3.13.0",
+    'importlib-metadata; python_version<"3.8"',
+]
+dynamic = ["version", "readme"]
+
+[tool.setuptools.dynamic]
+version = {attr = "google_payment_token_decipher.version.VERSION"}
+readme = {file = ["README.md",]}
+
+[tool.black]
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.isort]
+force_single_line = true
