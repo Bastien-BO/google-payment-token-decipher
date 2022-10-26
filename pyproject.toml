@@ -5,13 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "google-payment-token-decipher"
 description = "A python google payment token decipher library"
-long_description="A simple python implementation of the decipher process for google payment token"
 requires-python = ">=3.8"
 keywords = ["google", "google_pay", "gpay", "g-pay", "google pay", "googlepay"]
 license = {text = "BSD 3-Clause License"}
-author="Bastien BO"
-author_email="bastien.bo@free.fr"
-url="https://github.com/Bastien-BO/google-payment-token-decipher"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Programming Language :: Python",
