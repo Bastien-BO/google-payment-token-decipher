@@ -7,7 +7,7 @@ import requests
 
 from google_payment_token_decipher.exceptions import GetEcv2KeySetError
 from google_payment_token_decipher.exceptions import GetPublicKeySetsError
-from google_payment_token_decipher.models import Ecv2
+from google_payment_token_decipher.models.ecv2 import Ecv2
 
 __all__ = [
     "key_manager",
