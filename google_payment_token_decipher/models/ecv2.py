@@ -1,5 +1,5 @@
 """
-All dataclasses used payment token decipher
+All dataclasses used to represent an ecv2 key-set
 """
 from dataclasses import dataclass
 from datetime import datetime
@@ -9,7 +9,7 @@ from typing import Union
 @dataclass
 class Ecv2:
     """
-    Ecv2 data model
+    Ecv2 model
     """
 
     keyValue: str
