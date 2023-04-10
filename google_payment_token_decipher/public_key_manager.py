@@ -28,19 +28,26 @@ class PublicKeyManager:
     )
 
     def __init__(self, production: bool = False, refresh_background: bool = False):
+        """
+        Create a new PublicKeyManager instance
+        :param production: Choose between google development or production key-set
+        :param refresh_background: Allow key-set refresh at every keyset() function call (most secure way)
+        """
         self.__production = production
         self.__refresh_background = refresh_background
         self.ecv2 = self.__retrive_keyset()
 
     def refresh_keyset(self) -> None:
         """
-        Force refresh the keyset
+        Force the key-set refreshing
+        :return: None
         """
         self.ecv2 = self.__retrive_keyset()
 
     def __retrive_keyset(self) -> Ecv2:
         """
         Get google payment method token key-set converted to Ecv2 object
+        :return: Ecv2
         """
         try:
             response = requests.get(
@@ -65,6 +72,7 @@ class PublicKeyManager:
     def keyset(self) -> Ecv2:
         """
         Return the loaded key-set or refresh and return it if refresh background is set
+        :return: Ecv2
         """
         if self.__refresh_background:
             self.__retrive_keyset()
@@ -77,5 +85,8 @@ def key_manager(
 ) -> PublicKeyManager:
     """
     Get a cached instance of the public key manager
+    :param production: Choose between google development or production key-set
+    :param refresh_background: Allow key-set refresh at every keyset() function call (most secure way)
+    :return: PublicKeyManager
     """
     return PublicKeyManager(production, refresh_background)
